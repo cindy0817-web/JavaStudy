@@ -1,7 +1,14 @@
 package EnumExam;
 
 enum Currency{
-	DOLLAR, EURO, YEN, YUAN;
+	DOLLAR(1100), EURO(1500), YEN(1000), YUAN(150);
+	int value;
+	private Currency(int value) {
+		this.value = value;
+	}
+	public int getValue() {
+		return value;
+	}
 }
 
 public class EnumExam2 {
@@ -10,10 +17,10 @@ public class EnumExam2 {
 		Currency curCurency = Currency.EURO;
 		switch(curCurency) {
 		case DOLLAR :
-			System.out.println("달러 입니다.");
+			System.out.printf("달러의 환율은 %d입니다.", curCurency.getValue());
 			break;
 		case EURO :
-			System.out.println("유로화 입니다.");
+			System.out.printf("유로화의 환율은 %d입니다.", curCurency.getValue());
 			break;
 		}
 	}
