@@ -1,9 +1,12 @@
 package EnumExam;
 
-enum Currency{
+enum Currency implements Runnable{
 	DOLLAR(1100){
 		public void showCurrency() {
 			System.out.printf("달러의 환율은 %d원 입니다.", getValue());
+		}
+		public void run() {
+			System.out.println("hello i'm run method in DOLLAR");
 		}
 	}, 
 	EURO(1500){
@@ -23,7 +26,6 @@ enum Currency{
 	};
 	
 	private int value;
-//	constructor
 	private Currency(int value) {
 		this.value = value;
 	}
@@ -32,13 +34,12 @@ enum Currency{
 		return value;
 	}
 	
-//	override
 	public String toString() {
 		String tempString = value + "원";
 		return tempString;
 	}
 	
-	public void showMe() {
+	public void run() {
 		System.out.println("hello i'm");
 	}
 	
@@ -48,6 +49,7 @@ enum Currency{
 	 * 개발자 실수를 컴파일 시점에서 학인가능
 	 */
 	public abstract void showCurrency();
+}
 
 public class EnumExam2 {
 	
