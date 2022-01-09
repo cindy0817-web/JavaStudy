@@ -3,26 +3,45 @@ package EnumExam;
 enum Currency implements Runnable{
 	DOLLAR(1100){
 		public void showCurrency() {
-			System.out.printf("달러의 환율은 %d원 입니다.", getValue());
+			System.out.printf("달러의 환율은 %d원 입니다.\n", getValue());
 		}
+		@Override
 		public void run() {
 			System.out.println("hello i'm run method in DOLLAR");
 		}
 	}, 
 	EURO(1500){
 		public void showCurrency() {
-			System.out.printf("유로의 환율은 %d원 입니다.", getValue());
+			System.out.printf("유로의 환율은 %d원 입니다.\n", getValue());
+		}
+
+		@Override
+		public void run() {
+			System.out.println("hello i'm run method in EURO");
 		}
 	}, 
 	YEN(1000){
 		public void showCurrency() {
-			System.out.printf("엔화의 환율은 %d원 입니다.", getValue());
+			System.out.printf("엔화의 환율은 %d원 입니다.\n", getValue());
 		}
+
+		@Override
+		public void run() {
+			System.out.println("hello i'm run method in YEN");
+		}
+		
 	},
 	YUAN(150){
 		public void showCurrency() {
-			System.out.printf("위완화러의 환율은 %d원 입니다.", getValue());
+			System.out.printf("위완화러의 환율은 %d원 입니다.\n", getValue());
 		}
+		
+		@Override
+		public void run() {
+			System.out.println("hello i'm run method in YUAN");
+		}
+		
+		
 	};
 	
 	private int value;
@@ -54,8 +73,9 @@ enum Currency implements Runnable{
 public class EnumExam2 {
 	
 	public static void main(String[] args) {
-		Currency myCurrency = Currency.EURO;
+		Currency myCurrency = Currency.DOLLAR;
 		myCurrency.showCurrency();
+		myCurrency.run();
 		
 	}
 }
