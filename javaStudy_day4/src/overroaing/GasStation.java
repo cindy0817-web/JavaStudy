@@ -18,7 +18,7 @@ public class GasStation{
         
     }
     
-    public void fill(Suv suv){
+   /* public void fill(Suv suv){
         System.out.println("Suv에 기름을 넣습니다.");
         suv.gas += 10;
         System.out.println("기름이 "+suv.gas+"리터 들어있습니다.");
@@ -34,5 +34,13 @@ public class GasStation{
         System.out.println("Bus에 기름을 넣습니다.");
         bus.gas += 10;
         System.out.println("기름이 "+bus.gas+"리터 들어있습니다.");
+    }*/
+    
+    public void fill(Car car){
+        //참고. car.getClass().getName()은 car오브젝트가 실제로 어떤 클래스인지를 알려줍니다.
+        System.out.println(car.getClass().getName()+"에 기름을 넣습니다.");
+
+        car.gas += 10;
+        System.out.println("기름이 "+car.gas+"리터 들어있습니다.");
     }
 }
